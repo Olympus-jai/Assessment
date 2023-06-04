@@ -1,0 +1,58 @@
+Pfizer Assessment :-
+
+Metrics List :
+
+1. Revenue				 - To get the total Revenue 				  	{Revenue = SUM(hotel_bookings[Amount (USD)])}
+
+2. Actual Revenue 		 - Difference between Revenue and Refunded Amount 	{Actual_Revenue = [Revenue]-[Refundable_Amount]}
+
+3. ADR( Average Daily Rate)    - It is the measure of the average paid for rooms 	{ADR = DIVIDE([Revenue],[Total_Bookings],0) }
+					   sold in a given time period 
+
+4. Total Bookings 		 - To get the total bookings happened in all hotels   {Total_Bookings = COUNT(hotel_bookings[reservation_status]) }
+
+5. Total Check Out 		 - To get the 'Checked out' bookings out of all       {Total_Checkout = CALCULATE([Total_Bookings],hotel_bookings[reservation_status]="Check-Out") }
+					   Total bookings happened
+
+6. Check Out % 			 - calculating the check out percentage			{Checkout % = DIVIDE([Total_Checkout],[Total_Bookings])}
+
+7. Total Canceled Bookings	 - Calculating Cancelation Percentage 			{Cancelation % = DIVIDE([Total_Canceled Bookings],[Total_Bookings])}
+
+8. Total No Show			 - To get the"No Show" bookings out of all Total 	{Total_Noshow = CALCULATE([Total_Bookings],hotel_bookings[reservation_status]="No-Show")}
+					   bookings happened ("No show" means those customers 
+					   who neither cancelled nor attend to their booked 
+					   rooms)
+
+9. Total_week_days_stay		 - Calculating total no of days guest stays in week   {Total_Days_Stay_Week = SUM(hotel_bookings[stays_in_week_nights])}
+					   nights
+
+10. Total_weekend_days_stay	 - Calculating total no of days guest stays in 		{Total_Days_Stay_Weekend = SUM(hotel_bookings[stays_in_weekend_nights])}
+					   weekend nights
+
+11. Total nights			 - Difference between start date and end date		{Total nights= End Date - Start Date}
+					   
+
+12. Total Adults			 - Calculating total adults					{Total_Adult = SUM(hotel_bookings[adults])}
+
+13. Total Children		 - Calculating total childrens				{Total_Children = SUM(hotel_bookings[children])}
+
+14. Successful Bookings		 - Calculating Total checkouts and Total No shows	{Succesfull_Bookings = [Total_Noshow]+[Total_Checkout]}
+
+15. No Show % 			 - Calculating No show percentage				{NoShow % = DIVIDE([Total_Noshow],[Total_Bookings])}
+
+16. Realisation %			 - Total Checkout perncentage 				{Realisation % = 1- ([Cancelation %]+[NoShow %])}
+
+17. Refunded_Amount		 - Total Refunded amount after cancelation		{Refundable_Amount = CALCULATE([Revenue],hotel_bookings[deposit_type]="Refundable")}
+
+18. Non Refunded_Amount		 - Total Non Refunded amount after cancelation		{Non_Refund_Profit = CALCULATE([Canceled_Revenue],hotel_bookings[deposit_type]="Non Refund")}
+
+19. DBRN (Daily Booked Room 
+    Nights)				 - This metrics tells on average how many rooms are   {DBRN = DIVIDE([Total_Bookings],[Total_Nights],0)}
+					   booked for a day considering a time period
+20. Booking % by Market 
+    segment				 - Calculate percentage based on market segment		{Booking % by market Segment = DIVIDE([Total_Bookings],CALCULATE([Total_Bookings],ALL(hotel_bookings[market_segment])))}
+
+21. Cancelation % 		 - Calculate cancelation percentage 			{Cancelation % = DIVIDE([Total_Canceled Bookings],[Total_Bookings])}
+
+22. Canceled Revenue		 - Revenue after cancelation					{Canceled_Revenue = CALCULATE([Revenue],hotel_bookings[reservation_status]="Canceled")}
+

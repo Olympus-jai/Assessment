@@ -1,0 +1,55 @@
+Log :
+
+(To understand the process)
+
+1.Understanding the Task :
+	Make Analysis based on Hotel bookings, Make overall summary, Find the trends and made suggestions to improve business.
+
+2.Dataset has been downloaded from the mail.
+
+3.The dataset has been identified biased in some places.
+	* Hotel Type
+	* Customer Type
+
+4.Arrival date has been modified
+
+5.Country Name modified based on country code using VLOOKUP function and External source.
+
+6.Deleted 0.1 % of Hotel type data --> City Hotel Data
+
+7.Amount USD Column has some null values . Missed Values Relaced based on Mean and Mode value.
+
+8.We can't remove Duplicate values Because It doesn't have unique Identifier or Primary key. So we can have same transaction Type.
+
+9.Trying To identify the each features from the dataset.
+
+10.Feature extraction : For Analysis and Find trends. After Identifying Potential Features trying to find relationship between
+   numeric values with Correlation and Covarience.   
+
+11.After finding Correlation and Covarience ,we can't find any relationship based on that. No features have Strong relationship.
+
+12.After Clean the data and Feature extraction for Analysis.
+
+13.For Data Visualization the Power BI tool has been used.
+
+14.Different Metrics Have been Defined and Calculated using Excel and Power BI Formula . 20+ Metrics Calculated.
+
+15.Analysis and visualisation Have been done using varies methods and charts.
+
+16.Power Point Presentation have been done based on the finding from analysis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
